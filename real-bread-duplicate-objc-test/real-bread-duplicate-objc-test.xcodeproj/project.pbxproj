@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		840F34CD248C313900B50F24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34CC248C313900B50F24 /* AppDelegate.m */; };
+		840F34D0248C313900B50F24 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34CF248C313900B50F24 /* SceneDelegate.m */; };
+		840F34D6248C313900B50F24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F34D4248C313900B50F24 /* Main.storyboard */; };
+		840F34D8248C313900B50F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840F34D7248C313900B50F24 /* Assets.xcassets */; };
+		840F34DB248C313900B50F24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F34D9248C313900B50F24 /* LaunchScreen.storyboard */; };
+		840F34DE248C313900B50F24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34DD248C313900B50F24 /* main.m */; };
+		840F34F1248C3EF000B50F24 /* ALWBakeriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34F0248C3EF000B50F24 /* ALWBakeriesTableViewController.m */; };
+		840F34F4248C3F0E00B50F24 /* ALWInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34F3248C3F0E00B50F24 /* ALWInfoViewController.m */; };
+		840F34F7248C3F2700B50F24 /* ALWBakeryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34F6248C3F2700B50F24 /* ALWBakeryTableViewCell.m */; };
+		840F34FA248C433500B50F24 /* ALWBakery.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34F9248C433500B50F24 /* ALWBakery.m */; };
+		840F34FE248C4D3400B50F24 /* ALWBakeryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F34FD248C4D3400B50F24 /* ALWBakeryController.m */; };
+		840F353E248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F353D248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.m */; };
+		840F3541248EB13500B50F24 /* ALWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F3540248EB13500B50F24 /* ALWDetailViewController.m */; };
+		842E571B24957D0B00FFC751 /* bakeries.json in Resources */ = {isa = PBXBuildFile; fileRef = 842E571A24957D0B00FFC751 /* bakeries.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		840F34C8248C313900B50F24 /* real-bread-duplicate-objc-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "real-bread-duplicate-objc-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		840F34CB248C313900B50F24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		840F34CC248C313900B50F24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		840F34CE248C313900B50F24 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		840F34CF248C313900B50F24 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		840F34D5248C313900B50F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		840F34D7248C313900B50F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		840F34DA248C313900B50F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		840F34DC248C313900B50F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840F34DD248C313900B50F24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		840F34EF248C3EF000B50F24 /* ALWBakeriesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWBakeriesTableViewController.h; sourceTree = "<group>"; };
+		840F34F0248C3EF000B50F24 /* ALWBakeriesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWBakeriesTableViewController.m; sourceTree = "<group>"; };
+		840F34F2248C3F0E00B50F24 /* ALWInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWInfoViewController.h; sourceTree = "<group>"; };
+		840F34F3248C3F0E00B50F24 /* ALWInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWInfoViewController.m; sourceTree = "<group>"; };
+		840F34F5248C3F2700B50F24 /* ALWBakeryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWBakeryTableViewCell.h; sourceTree = "<group>"; };
+		840F34F6248C3F2700B50F24 /* ALWBakeryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWBakeryTableViewCell.m; sourceTree = "<group>"; };
+		840F34F8248C433500B50F24 /* ALWBakery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWBakery.h; sourceTree = "<group>"; };
+		840F34F9248C433500B50F24 /* ALWBakery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWBakery.m; sourceTree = "<group>"; };
+		840F34FC248C4D3400B50F24 /* ALWBakeryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWBakeryController.h; sourceTree = "<group>"; };
+		840F34FD248C4D3400B50F24 /* ALWBakeryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWBakeryController.m; sourceTree = "<group>"; };
+		840F353C248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWBakeryImageCollectionViewCell.h; sourceTree = "<group>"; };
+		840F353D248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWBakeryImageCollectionViewCell.m; sourceTree = "<group>"; };
+		840F353F248EB13500B50F24 /* ALWDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALWDetailViewController.h; sourceTree = "<group>"; };
+		840F3540248EB13500B50F24 /* ALWDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALWDetailViewController.m; sourceTree = "<group>"; };
+		842E571A24957D0B00FFC751 /* bakeries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bakeries.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		840F34C5248C313900B50F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		840F34BF248C313900B50F24 = {
+			isa = PBXGroup;
+			children = (
+				840F34CA248C313900B50F24 /* real-bread-duplicate-objc-test */,
+				840F34C9248C313900B50F24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		840F34C9248C313900B50F24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840F34C8248C313900B50F24 /* real-bread-duplicate-objc-test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840F34CA248C313900B50F24 /* real-bread-duplicate-objc-test */ = {
+			isa = PBXGroup;
+			children = (
+				840F34E5248C391300B50F24 /* Storyboards */,
+				840F34E6248C391F00B50F24 /* Models */,
+				840F34FB248C4D1A00B50F24 /* Model Controllers */,
+				840F34E8248C394800B50F24 /* Views */,
+				840F34E7248C392B00B50F24 /* View Controllers */,
+				842E571924957CED00FFC751 /* JSON */,
+				840F34E4248C38E100B50F24 /* Resources */,
+			);
+			path = "real-bread-duplicate-objc-test";
+			sourceTree = "<group>";
+		};
+		840F34E4248C38E100B50F24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				840F34CB248C313900B50F24 /* AppDelegate.h */,
+				840F34CC248C313900B50F24 /* AppDelegate.m */,
+				840F34CE248C313900B50F24 /* SceneDelegate.h */,
+				840F34CF248C313900B50F24 /* SceneDelegate.m */,
+				840F34D7248C313900B50F24 /* Assets.xcassets */,
+				840F34DC248C313900B50F24 /* Info.plist */,
+				840F34DD248C313900B50F24 /* main.m */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		840F34E5248C391300B50F24 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				840F34D4248C313900B50F24 /* Main.storyboard */,
+				840F34D9248C313900B50F24 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		840F34E6248C391F00B50F24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				840F34F8248C433500B50F24 /* ALWBakery.h */,
+				840F34F9248C433500B50F24 /* ALWBakery.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		840F34E7248C392B00B50F24 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				840F34F2248C3F0E00B50F24 /* ALWInfoViewController.h */,
+				840F34F3248C3F0E00B50F24 /* ALWInfoViewController.m */,
+				840F34EF248C3EF000B50F24 /* ALWBakeriesTableViewController.h */,
+				840F34F0248C3EF000B50F24 /* ALWBakeriesTableViewController.m */,
+				840F353F248EB13500B50F24 /* ALWDetailViewController.h */,
+				840F3540248EB13500B50F24 /* ALWDetailViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		840F34E8248C394800B50F24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				840F34F5248C3F2700B50F24 /* ALWBakeryTableViewCell.h */,
+				840F34F6248C3F2700B50F24 /* ALWBakeryTableViewCell.m */,
+				840F353C248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.h */,
+				840F353D248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		840F34FB248C4D1A00B50F24 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				840F34FC248C4D3400B50F24 /* ALWBakeryController.h */,
+				840F34FD248C4D3400B50F24 /* ALWBakeryController.m */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		842E571924957CED00FFC751 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				842E571A24957D0B00FFC751 /* bakeries.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		840F34C7248C313900B50F24 /* real-bread-duplicate-objc-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840F34E1248C313900B50F24 /* Build configuration list for PBXNativeTarget "real-bread-duplicate-objc-test" */;
+			buildPhases = (
+				840F34C4248C313900B50F24 /* Sources */,
+				840F34C5248C313900B50F24 /* Frameworks */,
+				840F34C6248C313900B50F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "real-bread-duplicate-objc-test";
+			productName = "real-bread-duplicate-objc-test";
+			productReference = 840F34C8248C313900B50F24 /* real-bread-duplicate-objc-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		840F34C0248C313900B50F24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Audrey Welch";
+				TargetAttributes = {
+					840F34C7248C313900B50F24 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 840F34C3248C313900B50F24 /* Build configuration list for PBXProject "real-bread-duplicate-objc-test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 840F34BF248C313900B50F24;
+			productRefGroup = 840F34C9248C313900B50F24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				840F34C7248C313900B50F24 /* real-bread-duplicate-objc-test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		840F34C6248C313900B50F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840F34DB248C313900B50F24 /* LaunchScreen.storyboard in Resources */,
+				840F34D8248C313900B50F24 /* Assets.xcassets in Resources */,
+				840F34D6248C313900B50F24 /* Main.storyboard in Resources */,
+				842E571B24957D0B00FFC751 /* bakeries.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		840F34C4248C313900B50F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840F34CD248C313900B50F24 /* AppDelegate.m in Sources */,
+				840F34DE248C313900B50F24 /* main.m in Sources */,
+				840F34D0248C313900B50F24 /* SceneDelegate.m in Sources */,
+				840F34F1248C3EF000B50F24 /* ALWBakeriesTableViewController.m in Sources */,
+				840F353E248EB11100B50F24 /* ALWBakeryImageCollectionViewCell.m in Sources */,
+				840F34FA248C433500B50F24 /* ALWBakery.m in Sources */,
+				840F34F4248C3F0E00B50F24 /* ALWInfoViewController.m in Sources */,
+				840F34FE248C4D3400B50F24 /* ALWBakeryController.m in Sources */,
+				840F34F7248C3F2700B50F24 /* ALWBakeryTableViewCell.m in Sources */,
+				840F3541248EB13500B50F24 /* ALWDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		840F34D4248C313900B50F24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840F34D5248C313900B50F24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		840F34D9248C313900B50F24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840F34DA248C313900B50F24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		840F34DF248C313900B50F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		840F34E0248C313900B50F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		840F34E2248C313900B50F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BH59G2VDQ6;
+				INFOPLIST_FILE = "real-bread-duplicate-objc-test/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.audreywelch.real-bread-duplicate-objc-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		840F34E3248C313900B50F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BH59G2VDQ6;
+				INFOPLIST_FILE = "real-bread-duplicate-objc-test/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.audreywelch.real-bread-duplicate-objc-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		840F34C3248C313900B50F24 /* Build configuration list for PBXProject "real-bread-duplicate-objc-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840F34DF248C313900B50F24 /* Debug */,
+				840F34E0248C313900B50F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		840F34E1248C313900B50F24 /* Build configuration list for PBXNativeTarget "real-bread-duplicate-objc-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840F34E2248C313900B50F24 /* Debug */,
+				840F34E3248C313900B50F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 840F34C0248C313900B50F24 /* Project object */;
+}

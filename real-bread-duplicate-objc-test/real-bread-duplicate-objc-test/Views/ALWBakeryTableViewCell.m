@@ -23,6 +23,7 @@
 
 @implementation ALWBakeryTableViewCell
 
+// This should get called anytime bakery is changed. See below for how I'd do that.
 - (void)updateViews {
     
     if (!self.bakery) { return; }
@@ -31,5 +32,15 @@
     self.bakeryAddressLabel.text = self.bakery.address;
     
 }
+
+/*
+- (void)setBakery:(ALWBakery *)bakery
+{
+    if (bakery != _bakery) {
+        _bakery = bakery;
+        [self updateViews];
+    }
+}
+*/
 
 @end

@@ -47,7 +47,9 @@
     NSLog(@"bakery milledInHouse is: %@", self.bakery.milledInHouse ? @"YES" : @"NO");
     
     [self updateViews];
-    
+
+    // Fix the below warning. if lat really should be an NSNumber (see my comment about that in ALWBakery),
+    // you should use %@ for the format specifier, since it's an object.
     NSLog(@"bakery location is: %ld", self.bakery.lat);
     NSLog(@"bakery location is: %@", self.bakery.location);
     
@@ -65,6 +67,8 @@
 
 }
 
+// Not a big deal, but I tend to remove 'nonnull', '__kindof', etc., from the method signatures in the .m file, since they have
+// no real impact on anything here (they do in the .h) and are cluttery
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     ALWBakeryImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell" forIndexPath:indexPath];
@@ -94,7 +98,8 @@
     [self.websiteButton setTitle:self.bakery.website forState:UIControlStateNormal];
     
     // tags
-    
+
+    // Lots of duplicated code in the below. Can you DRY it out a little?
     dispatch_async(dispatch_get_main_queue(), ^{
             if (self.bakery.sellsLoaves == NO) {
             

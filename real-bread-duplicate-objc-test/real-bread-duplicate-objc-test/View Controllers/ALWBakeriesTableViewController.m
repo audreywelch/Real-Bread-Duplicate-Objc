@@ -21,14 +21,15 @@
 @implementation ALWBakeriesTableViewController {
     
     // IVars
-    NSMutableArray *filteredBakeries;
-    BOOL isFiltered;
+    NSMutableArray *filteredBakeries; // This should be an internal property, not a bare ivar.
+    BOOL isFiltered; // Likely should also be a property, but if it *is* an ivar, should be prefixed with an underscore (_isFiltered).
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Instantiate bakery controller and fetch the bakeries
+    // Use property accessor here, ie. self.bakeryController = ...;, as well as on the next line.
     _bakeryController = [[ALWBakeryController alloc] init];
     [_bakeryController fetchBakeriesWithCompletionBlock:^(NSArray<ALWBakery *> * _Nullable bakeries, NSError * _Nullable error) {
         
@@ -48,7 +49,8 @@
     }];
     
     isFiltered = false;
-    
+
+    // Good. Your other option would be fine too. Neither is more correct than the other, just different ways of doing the same thing.
     [[self searchBar] setDelegate:self]; //ANOTHER OPTION: self.searchBar.delegate = self;
 }
 
@@ -72,6 +74,7 @@
     }
     
     return [self.bakeryController numberOfBakeries];
+    // Nothing wrong with the below. Not necessarily any reason to expose a separate numberOfBakeries property
     //return self.bakeryController.bakeries.count;
 }
 
@@ -88,7 +91,8 @@
         cell.bakery = bakery;
         
     } else {
-        
+
+        // Need to fix this warning. It's happening because -bakeryAt: takes an int, not an NSInteger like it should
         ALWBakery *bakery = [self.bakeryController bakeryAt:indexPath.row];
         cell.bakery = bakery;
     }
@@ -139,13 +143,18 @@
         ALWDetailViewController *vc = segue.destinationViewController;
         
         NSIndexPath *selectedRow = self.tableView.indexPathForSelectedRow;
-        
+
+        // If what returns nil?
         // If this returns nil, I want to do this
         NSInteger row = selectedRow.row;
-        
+
+        // I'd write the below with a ternary. Saves lots of lines of code.
+        // vc.bakery = isFiltered ? filteredBakeries[row] : self.bakeryController.bakeries[row];
+
         // Pass the selected object to the new view controller.
         if (isFiltered) {
-            
+
+            // No reason not to do the below in a single line.
             ALWBakery *bakery = [filteredBakeries objectAtIndex:row];
             vc.bakery = bakery;
             

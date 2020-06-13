@@ -77,7 +77,8 @@
     //NSArray *photos = dictionary[@"photos"];
     
     if (name && placeID && address) {
-        
+
+        // Can just return this directly, no need to assign to self.
         self = [self initWithName:name
                           address:address
                           placeID:placeID
@@ -94,6 +95,7 @@
                            photos:_photos];
     } else {
         // Return nil
+        // I would check for this and return nil early, avoiding an else clause altogether. More like you'd do guard in Swift
         NSLog(@"Error: Invalid object, unable to parse, %@", dictionary);
         return nil;
     }
@@ -101,5 +103,48 @@
     return self;
 }
 
+// How I would write the above:
+/*
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+
+    NSString *name = dictionary[@"name"];
+    NSString *address = dictionary[@"formattedAddress"];
+    NSString *placeID = dictionary[@"placeID"];
+    NSString *info = dictionary[@"info"];
+    NSString *phone = dictionary[@"internationalPhoneNumber"];
+    NSString *website = dictionary[@"website"];
+    NSNumber *lat = dictionary[@"lat"];
+    NSNumber *lng = dictionary[@"lng"];
+    NSArray *hours = dictionary[@"weekdayText"];
+    BOOL milledInHouse = dictionary[@"milledInHouse"];
+    BOOL organic = dictionary[@"organic"];
+    BOOL sellsLoaves = dictionary[@"sellsLoaves"];
+    BOOL servesFood = dictionary[@"servesFood"];
+
+    //NSLog(@"bakery milledInHouse is: %@", milledInHouse ? @"YES" : @"NO");
+
+    //NSArray *photos = dictionary[@"photos"];
+
+    if (!name || !placeID || !address) {
+        NSLog(@"Error: Invalid object, unable to parse, %@", dictionary);
+        return nil;
+    }
+
+    return [self initWithName:name
+                      address:address
+                      placeID:placeID
+                         info:info
+                        phone:phone
+                      website:website
+                          lat:lat
+                          lng:lng
+                        hours:hours
+                milledInHouse:milledInHouse
+                      organic:organic
+                  sellsLoaves:sellsLoaves
+                   servesFood:servesFood
+                       photos:_photos];
+}
+*/
 
 @end

@@ -19,21 +19,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALWBakeryController : NSObject
 
 // Array to store bakery objects
-@property (nonatomic, strong) NSArray *bakeries; // Should likely have copy attribute. Should be readonly externally?
+@property (nonatomic, copy) NSArray *bakeries;
 
 // Returns count of bakeries
-- (NSInteger)numberOfBakeries; // Make this a readonly @property?
+- (NSInteger)numberOfBakeries;
 
 // Returns bakery at specific index
-// The following should be called -bakeryAtIndex:. The argument should be an NSInteger not an int, and don't call it indexPath. indexPath is more than a single number, e.g. a section *and* row. This is just an index.
-- (ALWBakery *)bakeryAt:(int)indexPath;
+- (ALWBakery *)bakeryAtIndex:(NSInteger)index;
 
-// Nice use of 'fetch' here. Don't use 'get' instead. That's a very obvious sign of an inexperienced ObjC dev to me.
+// Fetches bakeries from firebase
 - (void)fetchBakeriesWithCompletionBlock:(ALWBakeryCompletion)completionBlock;
-
-// I think this could be named better. What does it do? What file? Why is it public?
-- (NSData *)JSONFromFile;
-
 
 @end
 

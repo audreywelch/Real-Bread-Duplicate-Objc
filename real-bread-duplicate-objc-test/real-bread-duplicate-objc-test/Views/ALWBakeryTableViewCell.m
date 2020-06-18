@@ -7,6 +7,7 @@
 //
 
 #import "ALWBakeryTableViewCell.h"
+#import "ALWBakery.h"
 
 @interface ALWBakeryTableViewCell ()
 
@@ -23,24 +24,20 @@
 
 @implementation ALWBakeryTableViewCell
 
-// This should get called anytime bakery is changed. See below for how I'd do that.
+- (void)setBakery:(ALWBakery *)bakery {
+    if (bakery != _bakery) {
+        _bakery = bakery;
+        [self updateViews];
+    }
+}
+
+// This should get called anytime bakery is changed.
 - (void)updateViews {
     
     if (!self.bakery) { return; }
     
     self.bakeryNameLabel.text = self.bakery.name;
     self.bakeryAddressLabel.text = self.bakery.address;
-    
 }
-
-/*
-- (void)setBakery:(ALWBakery *)bakery
-{
-    if (bakery != _bakery) {
-        _bakery = bakery;
-        [self updateViews];
-    }
-}
-*/
 
 @end

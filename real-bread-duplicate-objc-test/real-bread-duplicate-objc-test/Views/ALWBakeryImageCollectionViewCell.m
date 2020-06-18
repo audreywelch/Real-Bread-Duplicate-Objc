@@ -10,8 +10,6 @@
 
 @interface ALWBakeryImageCollectionViewCell ()
 
-
-
 @end
 
 @implementation ALWBakeryImageCollectionViewCell
@@ -39,7 +37,7 @@
     //    NSLog(@"URL: %@", url);
     //    // @"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreferences=\(self.bakery.photos[indexPath.row)&key=\(apiKey)"
     
-    //        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            dispatch_async(dispatch_get_global_queue(0, 0), ^{
     //
     //
     //            NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.bakery.photos[indexPath.row]]];

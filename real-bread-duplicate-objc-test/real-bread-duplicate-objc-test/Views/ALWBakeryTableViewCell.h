@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ALWBakery.h"
+//@class ALWBakery;
 
 NS_ASSUME_NONNULL_BEGIN
 

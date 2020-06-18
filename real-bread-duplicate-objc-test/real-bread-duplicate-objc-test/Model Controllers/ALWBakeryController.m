@@ -11,33 +11,24 @@
 
 NSString *baseURL = @"insert-firebase-url-here";
 
+@interface ALWBakeryController ()
+
+// Returns converted json file to data
+- (NSData *)JSONDataFromBakeriesFile;
+
+@end
+
 @implementation ALWBakeryController
 
-// You don't need to include this if you're not actually doing anything custom
-// Override default NSObject initializer (don't need to re-declare in .h file)
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (NSInteger)numberOfBakeries {
-
-    // Don't access the instance variable directly. Just do return self.bakeries.count
-    return _bakeries.count;
+    return self.bakeries.count;
 }
 
-// See header file, but the argument should not be called indexPath, should just be index.
-- (ALWBakery *)bakeryAt:(int)indexPath {
-    // Not a big deal, but I'd use subscript syntax: self.bakeries[index]
-    return [self.bakeries objectAtIndex: indexPath];
+- (ALWBakery *)bakeryAtIndex:(NSInteger)index {
+    return self.bakeries[index];
 }
 
-// Now that I see what this does, it should be private (ie. not declared in the .h).
-// I'd name it -JSONDataFromBakeriesFile
-- (NSData *)JSONFromFile {
+- (NSData *)JSONDataFromBakeriesFile {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"bakeries" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     return data;
@@ -46,28 +37,22 @@ NSString *baseURL = @"insert-firebase-url-here";
 - (void)fetchBakeriesWithCompletionBlock:(ALWBakeryCompletion)completionBlock {
     
     // Decode data from JSON File, rather than from Firebase
-    NSData *dataFromFile = [self JSONFromFile];
+    NSData *dataFromFile = [self JSONDataFromBakeriesFile];
 
     // NSError is used instead of do-catch blocks in obj-c
     // Give the message the error and the address of the error
-    // This is fine, but I'd call it just plain error, for whatever that's worth. What you've got is *not* wrong or bad, though.
-    NSError *jsonDecodingError = nil;
-    // let decodedObjectDictionaries: [[String: String]] - firebase is array of dictionaries
-    NSDictionary *decodedObjectDictionaries = [NSJSONSerialization JSONObjectWithData:dataFromFile options:0 error:&jsonDecodingError];
+    NSError *jsonError = nil;
+    NSDictionary *decodedObjectDictionaries = [NSJSONSerialization JSONObjectWithData:dataFromFile options:0 error:&jsonError];
 
-// You should never check the error itself for nil. Rather, you need to check the return value of the error-throwing method (decodedObjectDictionaries) in this case. It is perfectly valid for a method that did not fail to nevertheless return a non-nil error.
-    if (jsonDecodingError != nil) {
-        NSLog(@"Erorr decoding json: %@", jsonDecodingError);
-        completionBlock(nil, jsonDecodingError);
+    // If return value is nil, then we know there was an error
+    if (decodedObjectDictionaries == nil) {
+        NSLog(@"Erorr decoding json: %@", jsonError);
+        completionBlock(nil, jsonError);
         return;
     }
 
     // At this point, check to make sure we have an array of dictionaries
-    // Good that you're doing this check.
-    // I'd do if (![decodedObjectDictionaries isKindOfClass:[NSDictionary class]]) instead of the explicit comparison to NO.
-    // Here it's not a big deal, but you *definitely* don't want to explicitly compared BOOLs with YES, as that can give you
-    // false negatives.
-    if ([decodedObjectDictionaries isKindOfClass:[NSDictionary class]] == NO) {
+    if (![decodedObjectDictionaries isKindOfClass:[NSDictionary class]]) {
         NSLog(@"JSON result is not an dictionary");
         completionBlock(nil, nil);
         return;
@@ -76,14 +61,11 @@ NSString *baseURL = @"insert-firebase-url-here";
     NSMutableArray *bakeryResults = [[NSMutableArray alloc] init];
     
     // Loop through all of the dictionaries
-    // This is hard to understand. Are the *keys* of decodedObjectDictionaries also dictionaries?
-    // I'm guessing they're actually strings, so your loop object type should be NSString, and should
-    // be called something else (key? identifier? whatever the keys actually are)
+    // The *keys* of decodedObjectDictionaries are also dictionaries
     for (NSDictionary *dictionary in decodedObjectDictionaries) {
         
         // Use each placeID as the key to get inside the dictionary
         NSDictionary *bakeryResult = decodedObjectDictionaries[dictionary];
-        //NSLog(@"bakery result: %@", bakeryResult);
         
         // Initialize bakery objects
         ALWBakery *bakery = [[ALWBakery alloc] initWithDictionary:bakeryResult];
@@ -93,10 +75,16 @@ NSString *baseURL = @"insert-firebase-url-here";
     }
 
     // Assign data to stored array
-    self.bakeries = bakeryResults;
     completionBlock(bakeryResults, nil);
-    
+}
+
+@end
+
+
+
+
     // THE FOLLOWING WAS USED FOR FETCHING JSON FROM FIREBASE
+    // CURRENTLY READING FROM A JSON FILE
     // -------------------------------------------------------------
     
 //    // Data task to fetch data
@@ -171,8 +159,3 @@ NSString *baseURL = @"insert-firebase-url-here";
 //    }];
 //
 //    [dataTask resume];
-    
-}
-
-
-@end

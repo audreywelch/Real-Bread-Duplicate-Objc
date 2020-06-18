@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALWBakeriesTableViewController : UITableViewController
 
-//@property (nonatomic, readonly) ALWBakeryController *bakeryController;
-
 @end
 
 NS_ASSUME_NONNULL_END

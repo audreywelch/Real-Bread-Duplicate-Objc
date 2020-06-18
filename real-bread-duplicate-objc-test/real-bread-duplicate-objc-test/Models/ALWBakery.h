@@ -20,9 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy) NSString *info;
 @property (nonatomic, readonly, copy) NSString *phone;
 @property (nonatomic, readonly, copy) NSString *website;
-@property (nonatomic) NSNumber *lat; // Spell this all the way out (latitude). Does this need to be an NSNumber, or could it be a double or CLLocationDegrees?
-@property (nonatomic) NSNumber *lng; // Spell this all the way out (longitude). Does this need to be an NSNumber, or could it be a double or CLLocationDegrees?
-@property (nonatomic) CLLocation *location; // This should probably be readonly? Looks like it's always just computed from latitude and longitude
+@property (nonatomic) CLLocationDegrees latitude;
+@property (nonatomic) CLLocationDegrees longitude;
+@property (nonatomic, readonly) CLLocation *location;
 @property (nonatomic, readonly, copy) NSArray *hours;
 
 @property (nonatomic, readonly, getter=isMilledInHouse) BOOL milledInHouse;
@@ -38,8 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
                         info:(NSString *)info
                        phone:(NSString *)phone
                      website:(NSString *)website
-                         lat:(NSNumber *)lat
-                         lng:(NSNumber *)lng
+                         latitude:(CLLocationDegrees)latitude
+                         longitude:(CLLocationDegrees)longitude
                        hours:(NSArray *)hours
                milledInHouse:(BOOL)milledInHouse
                      organic:(BOOL)organic

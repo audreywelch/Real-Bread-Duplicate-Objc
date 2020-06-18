@@ -48,9 +48,7 @@
     
     [self updateViews];
 
-    // Fix the below warning. if lat really should be an NSNumber (see my comment about that in ALWBakery),
-    // you should use %@ for the format specifier, since it's an object.
-    NSLog(@"bakery location is: %ld", self.bakery.lat);
+    NSLog(@"bakery location is: %f", self.bakery.latitude);
     NSLog(@"bakery location is: %@", self.bakery.location);
     
     self.title = self.bakery.name;
@@ -60,19 +58,13 @@
     self.collectionView.dataSource = self;
 }
 
-
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
     return self.bakery.photos.count;
-
 }
 
-// Not a big deal, but I tend to remove 'nonnull', '__kindof', etc., from the method signatures in the .m file, since they have
-// no real impact on anything here (they do in the .h) and are cluttery
-- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     ALWBakeryImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell" forIndexPath:indexPath];
-
     cell.bakery = self.bakery;
     
     if (!(self.bakery.photos)) {
@@ -97,11 +89,12 @@
     [self.phoneButton setTitle:self.bakery.phone forState:UIControlStateNormal];
     [self.websiteButton setTitle:self.bakery.website forState:UIControlStateNormal];
     
-    // tags
+    // Update tags
 
-    // Lots of duplicated code in the below. Can you DRY it out a little?
+    // FIXME: - Lots of duplicated code in the below. DRY it out a little.
     dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.bakery.sellsLoaves == NO) {
+        
+        if (!(self.bakery.sellsLoaves)) {
             
             self.sellsLoavesLabel.textColor = UIColor.grayColor;
             NSNumber *strikeSize = [NSNumber numberWithInt:2];
@@ -126,8 +119,8 @@
             self.organicLabel.attributedText = strikeThroughText;
         }
         
-        if (self.bakery.isMilledInHouse == NO) {
-            NSLog(@"bakery milledInHouse is: %@", self.bakery.milledInHouse ? @"YES" : @"NO");
+        if (!(self.bakery.isMilledInHouse)) {
+            NSLog(@"bakery milledInHouse is: %@", self.bakery.isMilledInHouse ? @"YES" : @"NO");
             self.milledInHouseLabel.textColor = UIColor.grayColor;
             NSNumber *strikeSize = [NSNumber numberWithInt:2];
             NSDictionary *strikeThroughAttribute = [NSDictionary dictionaryWithObject:strikeSize forKey:NSStrikethroughStyleAttributeName];
@@ -143,12 +136,12 @@
         [self.mapView addAnnotation:annotation];
     });
 
-    
-    
-    
+    // FIXME: - Some booleans not returning correctly
+    // Apply this to BOOLs - is this why they are all returning YES ?
+    // I'd do if (![decodedObjectDictionaries isKindOfClass:[NSDictionary class]]) instead of the explicit comparison to NO.
+    // Here it's not a big deal, but you *definitely* don't want to explicitly compared BOOLs with YES, as that can give you
+    // false negatives.
 }
-
-
 
 /*
 #pragma mark - Navigation
